@@ -129,7 +129,7 @@ static gboolean query_path_info(GFile *file, guint32 *out_device, gboolean *out_
   if (out_device != NULL) {
     g_autoptr(GFileInfo) info =
         g_file_query_info(file, G_FILE_ATTRIBUTE_UNIX_DEVICE,
-                          G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS, NULL, error);
+                          G_FILE_QUERY_INFO_NONE, NULL, error);
     if (info == NULL) {
       return FALSE;
     }
